@@ -6,7 +6,7 @@ namespace LoginAPI.Models
 	{
 		[Key]
 		[MaxLength(50)]
-		public string ?username { get; set; }
+		public string ?email { get; set; }
 
 		[Required]
 		[MaxLength(50)]

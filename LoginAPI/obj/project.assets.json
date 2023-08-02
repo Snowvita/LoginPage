@@ -1800,11 +1800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Snowvita B\\LoginAPI\\LoginAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Snowvita B\\LoginPage\\LoginAPI\\LoginAPI.csproj",
       "projectName": "LoginAPI",
-      "projectPath": "C:\\Users\\Snowvita B\\LoginAPI\\LoginAPI.csproj",
+      "projectPath": "C:\\Users\\Snowvita B\\LoginPage\\LoginAPI\\LoginAPI.csproj",
       "packagesPath": "C:\\Users\\Snowvita B\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Snowvita B\\LoginAPI\\obj\\",
+      "outputPath": "C:\\Users\\Snowvita B\\LoginPage\\LoginAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Snowvita B\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -34,9 +34,9 @@ namespace LoginAPI.Controllers
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim("username", user.username)
+                    new Claim("email", user.email)
                 }),
-                Expires = DateTime.UtcNow.AddDays(7),
+                Expires = DateTime.UtcNow.AddSeconds(20),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKey), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -48,7 +48,7 @@ namespace LoginAPI.Controllers
         {
             try
             {
-                var existingUser = _context.users.FirstOrDefault(u => u.username == user.username);
+                var existingUser = _context.users.FirstOrDefault(u => u.email == user.email);
 
                 if (existingUser != null)
                 {
@@ -78,13 +78,13 @@ namespace LoginAPI.Controllers
             }
         }
 
-        [HttpGet("{username}")]
+        [HttpGet("{email}")]
         [Authorize]
-        public IActionResult GetUserByUsername(string username)
+        public IActionResult GetUserByUsername(string email)
         {
             try
             {
-                var user = _context.users.FirstOrDefault(u => u.username == username);
+                var user = _context.users.FirstOrDefault(u => u.email == email);
 
                 if (user != null)
                 {
