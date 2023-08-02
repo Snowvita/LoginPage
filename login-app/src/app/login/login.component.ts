@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username: string = '';
+  email: string = '';
   password: string = '';
   error: string = '';
 
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   authenticate(): void {
-    const user = { username: this.username, password: this.password };
+    const user = { email: this.email, password: this.password };
     this.http.post<any>('/api/login/authenticate', user).subscribe(
       response => {
         localStorage.setItem('token', response.token);

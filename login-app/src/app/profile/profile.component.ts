@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   loadProfile(): void {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({ 'Authorization': `Bearer ${token}` });
-    this.http.get<any>(`/api/login/${this.getUsername()}`, { headers }).subscribe(
+    this.http.get<any>(`/api/login/${this.getEmail()}`, { headers }).subscribe(
       response => {
         this.user = response;
       },
@@ -28,9 +28,9 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  getUsername(): string {
+  getEmail(): string {
     const token = localStorage.getItem('token');
     const payload = JSON.parse(atob(token!.split('.')[1]));
-    return payload.username;
+    return payload.email;
   }
 }
